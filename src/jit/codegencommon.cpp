@@ -2725,8 +2725,6 @@ void CodeGen::genJumpToThrowHlpBlk(emitJumpKind jumpKind, SpecialCodeKind codeKi
 
         // Jump to the excption-throwing block on error.
 
-        if (codeKind == SCK_OVERFLOW)
-            inst_RV_IV(INS_AND, REG_SPBASE, ~(STACK_ALIGN - 1), EA_PTRSIZE);
         inst_JMP(jumpKind, tgtBlk);
     }
     else
